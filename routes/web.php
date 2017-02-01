@@ -59,6 +59,20 @@ Route::get('/section-exam-result', 'ExamResultsController@section_exam_result');
 Route::get('/ajax-view-section-exam-result', 'ExamResultsController@ajax_view_section_exam_result');
 Route::get('/student-exam-result-{std}-{exm}', 'ExamResultsController@student_exam_result');
 
-
-
 Route::get('/test', 'ExamResultsController@test');
+
+//AccountSettingsController Starts From Here
+
+Route::get('account-types','AccountSettingsController@account_types');
+Route::post('save-account-types','AccountSettingsController@save_account_types');
+Route::get('account-heads','AccountSettingsController@account_heads');
+Route::post('save-account-heads','AccountSettingsController@save_account_heads');
+Route::get('account-items','AccountSettingsController@account_items');
+Route::post('save-new-account-item','AccountSettingsController@save_new_account_item');
+Route::get('account-item-price','AccountSettingsController@account_item_price');
+Route::post('save-account-item-amount','AccountSettingsController@save_account_item_amount');
+
+//Ajax Requests
+Route::get('account-head-selection','AccountSettingsController@account_head_selection');
+Route::get('ajax-account-head-view','AccountSettingsController@ajax_account_head_view');
+
