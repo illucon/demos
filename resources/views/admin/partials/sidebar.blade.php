@@ -32,7 +32,7 @@
             
             <li class="header">HEADER</li>
             
-            <li class=""><a href="{{url('/dashboard')}}"><i class="fa fa-link"></i> <span>Dashboard</span></a></li>
+            <li class=""><a href="{{url('/')}}"><i class="fa fa-link"></i> <span>Dashboard</span></a></li>
             
             <li class="treeview">
                 <a href="#"><i class="fa fa-link"></i> <span>Student</span>
@@ -77,6 +77,44 @@
                                  <li class=""><a href="{{url('/result-by-student-all-exam')}}">By Student(All Exam)</a></li>
                                  <li class=""><a href="{{url('/section-exam-result')}}">Section Exam Result</a></li>
                             </ul>
+                    </li>
+                </ul>
+            </li>
+            
+            <li class="treeview">
+                <a href="#"><i class="fa fa-bank"></i> Account Management
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="">
+                        <a href="#"><i class="fa  fa-graduation-cap"></i> Student Account
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="#"><i class="fa fa-circle"></i> <span>Account Profile</span></a></li>
+                            <li><a href="#"><i class="fa fa-circle"></i> <span>Assign Invoice</span></a></li>
+                            <li><a href="#"><i class="fa fa-circle"></i> <span>Receive Payments</span></a></li>
+                            <li><a href="#"><i class="fa fa-circle"></i> <span>Due SMS & Email</span></a></li>
+                            
+                        </ul>
+                    </li>
+                    
+                    <li class="treeview">
+                        <a href="#"><i class="fa  fa-cog"></i> Account Settings
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="{{url('account-item-price')}}"><i class="fa fa-circle"></i> <span>Account Items Price</span></a></li>
+                            <li><a href="{{ url('account-items') }}"><i class="fa fa-circle"></i> <span>Account Items</span></a></li>
+                            <li><a href="{{ url('account-heads') }}"><i class="fa fa-circle"></i> <span>Account Heads</span></a></li>
+                            <li><a href="{{ url('account-types') }}"><i class="fa fa-circle"></i> <span>Account Types</span></a></li>
+                        </ul>
                     </li>
                 </ul>
             </li>
