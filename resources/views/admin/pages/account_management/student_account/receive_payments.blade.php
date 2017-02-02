@@ -78,29 +78,21 @@
                             </div>
                             <div class="col-xs-3">
                                 <div class="form-group" id="StudentIdFind">
-                                    <input name="student_sid" type="text" placeholder="Student SID" class="form-control">
+                                    <input name="student_sid" id="StudentSidSearch" type="text" placeholder="Student SID" class="form-control">
                                 </div>
                             </div>
                             
                             <div class="col-xs-3 pull-right">
                                 <div class="form-group">
-                                    <button type="button" class="btn btn-success" onclick="student_invoices_info(document.getElementById('SelectStudent').value,'{{ url('ajax-student-invoices-info') }}', '#StudentInvoicesTable')">Search</button>
+                                    <!--<button type="button" class="btn btn-success" onclick="student_invoices_info(document.getElementById('SelectStudent').value,'{{ url('ajax-student-invoices-info') }}', '#StudentInvoicesTable')">Search</button>-->
+                                    <button type="button" class="btn btn-success" onclick="student_invoices_info(document.getElementById('StudentSidSearch').value,'{{ url('ajax-student-invoices-info') }}', '#StudentInvoicesTable')">Search</button>
                                 </div>
                             </div>
                     </div>
                     <br/>
                     <div class="row">
-                        <div class="col-xs-12">
-                            <div class="box">
-                                <div class="box-header">
-                                    <h3 class="box-title">Student Invoices : </h3>
-                                </div>
-                                <!-- /.box-header -->
-                                <div class="box-body" id="StudentInvoicesTable">
-                                    
-                                </div>
-                                <!-- /.box-body -->
-                            </div>
+                        <div class="col-xs-12" id="StudentInvoicesTable">
+                            
                             <!-- /.box -->
                         </div>              
                     </div>

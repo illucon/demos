@@ -212,7 +212,9 @@ class StudentAccountController extends Controller
    public function ajax_student_invoices_info(Request $request){
        
        if ($request->ajax()) {
-            $student_id = $request->data;
+            $student_sid = $request->data;            
+            $student_info = Student::where('sid',$student_sid)->first();            
+            $student_id = $student_info->id;
             
             $invoices = Invoice::where('students_id',$student_id)->get();
             
