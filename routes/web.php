@@ -80,10 +80,17 @@ Route::get('all-invoices','StudentAccountController@all_invoices');
 Route::get('student-account-profile/{id}','StudentAccountController@student_account_profile');
 Route::get('student-receive-payments/{id}','StudentAccountController@student_receive_payments');
 Route::post('save-student-payments','StudentAccountController@save_student_payments');
+
+Route::get('receive-payments','StudentAccountController@receive_payments');
 Route::get('all-received-payments','StudentAccountController@all_received_payments');
 
 //Ajax Requests
 Route::get('account-head-selection','AccountSettingsController@account_head_selection');
 Route::get('ajax-account-head-view','AccountSettingsController@ajax_account_head_view');
+
 Route::get('ajax-selected-class-students','StudentAccountController@ajax_selected_class_students');
+Route::get('ajax-section-view','StudentAccountController@ajax_section_view');
+Route::get('ajax-student-view','StudentAccountController@ajax_student_view');
+Route::get('ajax-student-id-find','StudentAccountController@ajax_student_id_find');
+Route::get('ajax-student-invoices-info','StudentAccountController@ajax_student_invoices_info');
 

@@ -98,7 +98,8 @@
                             
                             <li><a href="{{url('assign-invoice')}}"><i class="fa fa-circle"></i> <span>Assign Invoice</span></a></li>
                             <li><a href="{{url('all-invoices')}}"><i class="fa fa-circle"></i> <span>All Invoices</span></a></li>
-                            <li><a href="{{url('all-received-payments')}}"><i class="fa fa-circle"></i> <span>All Receive Payments</span></a></li>
+                            <li><a href="{{url('receive-payments')}}"><i class="fa fa-circle"></i> <span>Receive Payments</span></a></li>
+                            <li><a href="{{url('all-received-payments')}}"><i class="fa fa-circle"></i> <span>All Received Payments</span></a></li>
                             
                         </ul>
                     </li>

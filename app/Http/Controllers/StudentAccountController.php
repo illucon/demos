@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Redirect;
 
 use App\Student;
 use App\ClassName;
+use App\SectionName;
 use App\AccountItem;
 use App\AccountHead;
 use App\AccountType;
@@ -151,7 +152,80 @@ class StudentAccountController extends Controller
        
        return Redirect::to('all-invoices')->with('success','Successfully Received Money From Student');
    }
-    
+   
+   public function receive_payments(){
+       
+       $all_classes = ClassName::all();
+       
+       return view('admin.pages.account_management.student_account.receive_payments')
+                          ->with('all_classes',$all_classes);
+   }
+   
+   public function ajax_section_view(Request $request){
+       
+       if ($request->ajax()) {
+            $class_id = $request->data;
+            
+            $class_defined_section = SectionName::where('class_names_id',$class_id)->get();
+            
+            view()->share('class_to_section',$class_defined_section); //info_students unique
+            $view = view('admin.pages.ajax_options.section');
+            $render = $view->render();
+            $result['response'] = $render;
+            
+            return response()->json($result);
+        }
+       
+   }
+   public function ajax_student_view(Request $request){
+       
+       if ($request->ajax()) {
+            $section_id = $request->data;
+            
+            $section_students = Student::where('section',$section_id)->get();
+            
+            view()->share('section_wise_students',$section_students);
+            $view = view('admin.pages.ajax_options.selection_student');
+            $render = $view->render();
+            $result['response'] = $render;
+            
+            return response()->json($result);
+        }
+       
+   }
+   public function ajax_student_id_find(Request $request){
+       
+       if ($request->ajax()) {
+            $student_id = $request->data;
+            
+            $student_info = Student::find($student_id);
+            
+            view()->share('student_information',$student_info);
+            $view = view('admin.pages.ajax_options.student_id_input');
+            $render = $view->render();
+            $result['response'] = $render;
+            
+            return response()->json($result);
+        }
+       
+   }
+   public function ajax_student_invoices_info(Request $request){
+       
+       if ($request->ajax()) {
+            $student_id = $request->data;
+            
+            $invoices = Invoice::where('students_id',$student_id)->get();
+            
+            view()->share('invoices_info',$invoices);
+            $view = view('admin.pages.ajax_options.invoices');
+            $render = $view->render();
+            $result['response'] = $render;
+            
+            return response()->json($result);
+        }
+       
+   }
+
    public function all_received_payments(){
        
        $all_received_payments = ReceivePayment::all();
