@@ -31,4 +31,8 @@ class Student extends Model
         return $this->hasMany('App\MarkEntry', 'students_id');
 //        return $this->hasOne('App\Phone', 'foreign_key', 'local_key');
     }
+    public function Invoice()
+    {
+        return $this->hasMany('App\Invoice', 'invoices_id');
+    }
 }

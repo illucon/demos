@@ -17,4 +17,7 @@ class AccountItem extends Model
     public function AccountHead() {
         return $this->belongsTo('App\AccountHead', 'account_heads_id');
     }
+    public function Invoice() {
+        return $this->hasMany('App\Invoice', 'invoices_id');
+    }
 }

@@ -72,7 +72,18 @@ Route::post('save-new-account-item','AccountSettingsController@save_new_account_
 Route::get('account-item-price','AccountSettingsController@account_item_price');
 Route::post('save-account-item-amount','AccountSettingsController@save_account_item_amount');
 
+//StudentAccountController Starts From Here
+
+Route::get('assign-invoice','StudentAccountController@assign_invoice');
+Route::post('generate-invoice-for-students','StudentAccountController@generate_invoice_for_students');
+Route::get('all-invoices','StudentAccountController@all_invoices');
+Route::get('student-account-profile/{id}','StudentAccountController@student_account_profile');
+Route::get('student-receive-payments/{id}','StudentAccountController@student_receive_payments');
+Route::post('save-student-payments','StudentAccountController@save_student_payments');
+Route::get('all-received-payments','StudentAccountController@all_received_payments');
+
 //Ajax Requests
 Route::get('account-head-selection','AccountSettingsController@account_head_selection');
 Route::get('ajax-account-head-view','AccountSettingsController@ajax_account_head_view');
+Route::get('ajax-selected-class-students','StudentAccountController@ajax_selected_class_students');
 

@@ -81,29 +81,29 @@
                 </ul>
             </li>
             
-            <li class="treeview">
+            <li class="treeview active">
                 <a href="#"><i class="fa fa-bank"></i> Account Management
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="">
+                    <li class="active">
                         <a href="#"><i class="fa  fa-graduation-cap"></i> Student Account
                             <span class="pull-right-container">
                                 <i class="fa fa-angle-left pull-right"></i>
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="#"><i class="fa fa-circle"></i> <span>Account Profile</span></a></li>
-                            <li><a href="#"><i class="fa fa-circle"></i> <span>Assign Invoice</span></a></li>
-                            <li><a href="#"><i class="fa fa-circle"></i> <span>Receive Payments</span></a></li>
-                            <li><a href="#"><i class="fa fa-circle"></i> <span>Due SMS & Email</span></a></li>
+                            
+                            <li><a href="{{url('assign-invoice')}}"><i class="fa fa-circle"></i> <span>Assign Invoice</span></a></li>
+                            <li><a href="{{url('all-invoices')}}"><i class="fa fa-circle"></i> <span>All Invoices</span></a></li>
+                            <li><a href="{{url('all-received-payments')}}"><i class="fa fa-circle"></i> <span>All Receive Payments</span></a></li>
                             
                         </ul>
                     </li>
                     
-                    <li class="treeview">
+                    <li class="treeview active">
                         <a href="#"><i class="fa  fa-cog"></i> Account Settings
                             <span class="pull-right-container">
                                 <i class="fa fa-angle-left pull-right"></i>
